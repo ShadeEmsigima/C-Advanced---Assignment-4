@@ -19,7 +19,7 @@
 		return (a < b ? a : b);
 	}
 
-	template<typename T> T sort(T a, T b) { // 9 args
+	template<typename T> T sort(T a) { // 9 args
 		for( i = 0; i <  i++)
 			for (int j = 0; j < colours.size(); j++) {
 		}
@@ -45,21 +45,8 @@
 	
 	void sortVectorDouble(std::vector<double> a) { //for a vector that you get
 
-		std::cout << std::endl << "Initiating function sortVectorDouble ==========================" << std::endl;
-		std::vector<double> tempVec;//{ a.at(0)}; //copy the original vector values
-		std::cout << "Original vector looks like this: ";
-
-		std::cout << std::endl;
-
-		//std::cout << "TempVec takes first two values of the original vector: " << tempVec.at(0)<< std::endl;//check which variables tempvec has
-		//take one apple, if something is bigger form original
-		
-		//creating new vector
-		std::cout << "CAN U SEE ME -0";
-		
-		
-		
-		
+		std::cout << std::endl << "SortVectorDouble: ";
+		std::vector<double> tempVec;//create new empty vect
 		
 		//Primary loop to fill our tempVec (tor) onions are awesome.
 		int loopvar = a.size();
@@ -83,50 +70,17 @@
 			a.erase(a.begin()+varpos);
 			tempVec.push_back(tempvar);
 		}
-	
 
-
-
-		std::cout << "Completed adding, final list: ";
 		for (int i = 0; i < tempVec.size(); i++) {
 			std::cout << tempVec.at(i) << " ";
 		}
-		//std::cout << "the second last element is: ";
-		//std::cout << tempVec.at(tempVec.size() - 2); // -2 not 1, because the actuall last element isnt an element
-		std::cout << std::endl;
-
-		//for as long as the original vector is lon
-		int orVecLeng = a.size();
-		//std::cout << "Size of original vector is: " << orVecLeng<<std::endl;
-		for (int i = 0; i < orVecLeng; i++) {
-
-			//print what the vector currently holds.
-			std::cout << "Elements in tempVec currently: ";
-			int tempVecLength = tempVec.size();
-			for (int i = 0; i < tempVecLength; i++) {
-				std::cout << tempVec.at(i) << " ";
-			}
-		/*	std::cout << std::endl;
-			std::cout << "the second last element is: ";
-			std::cout << tempVec.at(tempVec.size() - 2);
-			std::cout << std::endl;*/
-
-
-			//now actually sort the tempVec, larger to smaller value:
-			std::cout << "Sorting..." << std::endl << std::endl;
-
-
-
-				//else { std::cout << "The first value is already greater than the second" << std::endl; }
-
-				////now add new elements to the tempVec from the original one.
-				//std::cout << "Adding next element from original vector into thempVec..." << std::endl;
-				//tempVec.push_back(a.at(i));
-				////std::cout << std::endl;
-			}
 
 		std::cout << std::endl;
 		}
+
+	void sortVectorStrings(std::vector<std::string> a) {
+		
+	}
 
 		int main() {
 
@@ -140,15 +94,6 @@
 			// 2) alle elementen UPPERCASE te maken.
 			// 3) alle dubbele te verwijderen
 
-
-
-			/*for (std::vector<string>::const_iterator i = colours.begin(); i != colours.end(); ++i) {
-				std::cout << *i << ' ';
-			}*/
-
-			/*for (int i = 0; i < colours.size; i++) {
-				std::cout << colours;
-			}*/
 
 			std::vector<double> numbers{ 10, 324422, 6, -23, 234.5, 654.1, 3.1242, -9.23, 635 };
 			printVectorDouble(numbers);//print the elements of vector type double
