@@ -46,14 +46,51 @@
 	void sortVectorDouble(std::vector<double> a) { //for a vector that you get
 
 		std::cout << std::endl << "Initiating function sortVectorDouble ==========================" << std::endl;
-		std::vector<double> tempVec{ a.at(0), a.at(1) }; //copy the original vector values
+		std::vector<double> tempVec;//{ a.at(0)}; //copy the original vector values
 		std::cout << "Original vector looks like this: ";
-		for (int i = 0; i < 9; i++) {
-			std::cout << a.at(i) << " ";
-		}
+
 		std::cout << std::endl;
 
-		std::cout << "TempVec takes first two values of the original vector: " << tempVec.at(0) << " " << tempVec.at(1) << std::endl;//check which variables tempvec has
+		//std::cout << "TempVec takes first two values of the original vector: " << tempVec.at(0)<< std::endl;//check which variables tempvec has
+		//take one apple, if something is bigger form original
+		
+		//creating new vector
+		std::cout << "CAN U SEE ME -0";
+		
+		
+		
+		
+		
+		//Primary loop to fill our tempVec (tor) onions are awesome.
+		int loopvar = a.size();
+		for (int i = 0; i < loopvar; i++) {
+			double tempvar = a.at(0);
+			int varpos = 0;
+			int looppos = 0;
+
+			//Iterating through all elements of the original vector list copy;
+			for (std::vector<double>::iterator it = a.begin(); it != a.end(); ++it) {
+				//Finding the largest value inside of the original vector list copy;
+				if (tempvar < *it) {
+					//updating our tempList variables
+					tempvar = *it;
+					varpos = looppos;
+				}
+				//updating position of iteration
+				looppos++;
+			}
+			//erasing the original vector list copy element chosen for tempvar (largest variable)
+			a.erase(a.begin()+varpos);
+			tempVec.push_back(tempvar);
+		}
+	
+
+
+
+		std::cout << "Completed adding, final list: ";
+		for (int i = 0; i < tempVec.size(); i++) {
+			std::cout << tempVec.at(i) << " ";
+		}
 		//std::cout << "the second last element is: ";
 		//std::cout << tempVec.at(tempVec.size() - 2); // -2 not 1, because the actuall last element isnt an element
 		std::cout << std::endl;
@@ -61,7 +98,7 @@
 		//for as long as the original vector is lon
 		int orVecLeng = a.size();
 		//std::cout << "Size of original vector is: " << orVecLeng<<std::endl;
-		for (int i = 2; i < orVecLeng; i++) {
+		for (int i = 0; i < orVecLeng; i++) {
 
 			//print what the vector currently holds.
 			std::cout << "Elements in tempVec currently: ";
@@ -69,32 +106,25 @@
 			for (int i = 0; i < tempVecLength; i++) {
 				std::cout << tempVec.at(i) << " ";
 			}
-			std::cout << std::endl;
+		/*	std::cout << std::endl;
 			std::cout << "the second last element is: ";
 			std::cout << tempVec.at(tempVec.size() - 2);
-			std::cout << std::endl;
+			std::cout << std::endl;*/
 
 
 			//now actually sort the tempVec, larger to smaller value:
 			std::cout << "Sorting..." << std::endl << std::endl;
 
-				if (tempVec.at(tempVec.size()-2) < tempVec.at(tempVec.size()-1)) { //if the values are not in decending order
-					double tempVar = tempVec.at(tempVec.size()-2);//save the first to temporary variable
-					tempVec.erase(tempVec.end()-2);//remove the first
-					tempVec.push_back(tempVar);//add it to the back of the tempVector
-					//std::cout << "The new order is: " << tempVec.at(0) << " " << tempVec.at(1) << std::endl;
-				}
-				else { std::cout << "The first value is already greater than the second" << std::endl; }
 
-				//now add new elements to the tempVec from the original one.
-				std::cout << "Adding next element from original vector into thempVec..." << std::endl;
-				tempVec.push_back(a.at(i));
-				//std::cout << std::endl;
+
+				//else { std::cout << "The first value is already greater than the second" << std::endl; }
+
+				////now add new elements to the tempVec from the original one.
+				//std::cout << "Adding next element from original vector into thempVec..." << std::endl;
+				//tempVec.push_back(a.at(i));
+				////std::cout << std::endl;
 			}
-		std::cout << "Completed adding, final list: ";
-		for (int i = 0; i < tempVec.size(); i++) {
-			std::cout << tempVec.at(i) << " ";
-		}
+
 		std::cout << std::endl;
 		}
 
